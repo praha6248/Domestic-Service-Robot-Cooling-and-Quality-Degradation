@@ -15,6 +15,8 @@
     (dish-at espresso coffee_machine)
     (hot-fresh black_coffee)
     (hot-fresh espresso)
+    (connected coffee_machine serving_area)
+    (connected serving_area coffee_machine)
   )
   (:goal
     (and

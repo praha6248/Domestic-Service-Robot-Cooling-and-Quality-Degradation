@@ -18,6 +18,7 @@
     (cold-degraded ?d - dish)
     (inspected ?d - dish)
     (served ?d - dish)
+    (connected ?from - location ?to - location)
   )
 
   (:functions
@@ -26,11 +27,22 @@
 
   (:action move
     :parameters (?r - robot ?from ?to - location)
-    :precondition (robot-at ?r ?from)
+    :precondition (and
+      (robot-at ?r ?from)
+      (connected ?from ?to)
+    )
     :effect (and
       (not (robot-at ?r ?from))
       (robot-at ?r ?to)
       (increase (total-cost) 5)
+      
+      (forall (?d - dish)
+        (when (and (holding ?r ?d) (hot-fresh ?d))
+          (and (not (hot-fresh ?d)) (warm-acceptable ?d))))
+          
+      (forall (?d - dish)
+        (when (and (holding ?r ?d) (warm-acceptable ?d))
+          (and (not (warm-acceptable ?d)) (cold-degraded ?d))))
     )
   )
 
@@ -82,9 +94,6 @@
     )
   )
 
-  ; -----------------------------------------------------------
-  ; SERVE - one action per acceptable quality level
-  ; -----------------------------------------------------------
   (:action serve-coffee-hot
     :parameters (?r - robot ?d - dish ?l - location)
     :precondition (and
@@ -118,10 +127,6 @@
       (increase (total-cost) 1)
     )
   )
-
-  ; -----------------------------------------------------------
-  ; cold-degraded coffee can only be discarded, never served
-  ; -----------------------------------------------------------
   (:action discard-cold-coffee
     :parameters (?r - robot ?d - dish ?l - location)
     :precondition (and
