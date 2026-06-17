@@ -1,0 +1,1 @@
+# Domestic-Service-Robot-Cooling-and-Quality-Degradation
