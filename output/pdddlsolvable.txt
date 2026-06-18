@@ -1,0 +1,39 @@
+domain parsed
+problem parsed
+grounding..
+grounding time: 33
+aibr preprocessing
+|f|:17
+|x|:0
+|a|:14
+|p|:0
+|e|:0
+h1 setup time (msec): 13
+ g(n)= 9.0 h(n)=19.0
+ g(n)= 10.0 h(n)=16.0
+ g(n)= 15.0 h(n)=11.0
+ g(n)= 16.0 h(n)=9.0
+ g(n)= 21.0 h(n)=4.0
+ g(n)= 24.0 h(n)=1.0
+problem solved
+
+found plan:
+0.0: (pick-coffee cafebot black_coffee coffee_machine)
+1.0: (move cafebot coffee_machine serving_area)
+2.0: (check-temperature cafebot black_coffee)
+3.0: (serve-coffee-warm cafebot black_coffee serving_area)
+4.0: (move cafebot serving_area coffee_machine)
+5.0: (pick-coffee cafebot espresso coffee_machine)
+6.0: (move cafebot coffee_machine serving_area)
+7.0: (check-temperature cafebot espresso)
+8.0: (serve-coffee-warm cafebot espresso serving_area)
+
+plan-length:9
+metric (search):25.0
+planning time (msec): 35
+heuristic time (msec): 9
+search time (msec): 30
+expanded nodes:17
+states evaluated:36
+number of dead-ends detected:16
+number of duplicates detected:12
