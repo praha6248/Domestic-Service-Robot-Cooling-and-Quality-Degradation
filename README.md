@@ -22,6 +22,7 @@ The `total-cost` function acts as a heuristic metric to optimize service efficie
 The goal is to serve black-coffee and espresso. As the path is short, the beverage cannot get `cold-degraded` while the robot is serving coffee.
 
 **Generated plan:**
+```text
 0.0: (pick-coffee cafebot black_coffee coffee_machine)
 1.0: (move cafebot coffee_machine serving_area)
 2.0: (check-temperature cafebot black_coffee)
@@ -61,6 +62,7 @@ The model shifts from symbolic discrete transitions to hybrid dynamical modeling
 The goal is to serve two beverages. The plan is feasible as the robot coordinates tasks within the temperature threshold.
 
 **Generated plan:**
+```text
 0: (pick-coffee cafebot black_coffee coffee_machine)
 0: -----waiting---- [2.0]
 2.0: (move cafebot coffee_machine serving_area)
