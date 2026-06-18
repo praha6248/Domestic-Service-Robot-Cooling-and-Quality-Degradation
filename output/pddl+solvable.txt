@@ -1,0 +1,49 @@
+domain parsed
+problem parsed
+grounding..
+grounding time: 29
+aibr preprocessing
+|f|:12
+|x|:3
+heuristic problem creation
+aibr preprocessing
+|a|:8
+|p|:3
+|e|:4
+delta time heuristic model:1.0
+delta time planning model:1.0
+delta time search-execution model:1.0
+delta time validation model:1
+h1 setup time (msec): 9
+ g(n)= 9.0 h(n)=7.0
+ g(n)= 10.0 h(n)=5.0
+ g(n)= 23.0 h(n)=4.0
+ g(n)= 28.0 h(n)=3.0
+ g(n)= 29.0 h(n)=1.0
+extracting plan with execution delta: 1.0
+problem solved
+
+found plan:
+0: (pick-coffee cafebot black_coffee coffee_machine)
+0: -----waiting---- [2.0]
+2.0: (move cafebot coffee_machine serving_area)
+2.0: -----waiting---- [11.0]
+11.0: (serve-coffee cafebot black_coffee serving_area)
+11.0: (move cafebot serving_area coffee_machine)
+11.0: -----waiting---- [16.0]
+16.0: (pick-coffee cafebot espresso coffee_machine)
+16.0: -----waiting---- [18.0]
+18.0: (move cafebot coffee_machine serving_area)
+18.0: -----waiting---- [23.0]
+23.0: (serve-coffee cafebot espresso serving_area)
+
+plan-length:35
+elapsed time: 23.0
+metric (search):30.0
+planning time (msec): 62
+heuristic time (msec): 24
+search time (msec): 58
+expanded nodes:358
+states evaluated:848
+number of dead-ends detected:23
+number of duplicates detected:79
