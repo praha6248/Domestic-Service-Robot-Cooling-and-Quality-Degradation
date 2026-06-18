@@ -32,6 +32,7 @@ The goal is to serve black-coffee and espresso. As the path is short, the bevera
 6.0: (move cafebot coffee_machine serving_area)
 7.0: (check-temperature cafebot espresso)
 8.0: (serve-coffee-warm cafebot espresso serving_area)
+```
 #### Problem when delays lead to failure
 The goal is to serve espresso. The route is elongated by multiple points, making it impossible for the robot to serve the coffee in an acceptable state.
 
@@ -75,6 +76,7 @@ The goal is to serve two beverages. The plan is feasible as the robot coordinate
 18.0: (move cafebot coffee_machine serving_area)
 18.0: -----waiting---- [23.0]
 23.0: (serve-coffee cafebot espresso serving_area)
+```
 #### Problem when delays lead to failure
 Due to the number of beverages (three instead of two), the `timer-process` forces the robot to spend more cumulative time. The continuous cooling process causes the temperature of the third beverage to drop below 40 before arrival.
 
